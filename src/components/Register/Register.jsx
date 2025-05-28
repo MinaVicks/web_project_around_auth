@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logo.svg";
 
-import "./SignIn.css";
+import "./register.css";
 
-const SignIn = ({ handleRegistration }) => {
+const Register = ({ handleRegistration }) => {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -25,25 +25,25 @@ const SignIn = ({ handleRegistration }) => {
 
   return (
     <div className="page">
-      <div className="signin__header">
-        <img src={logo} alt="Logo Around The US" className="signin__logo" />
-        <Link to="login" className="signin__login-link">
-          Registrate
+      <div className="register__header">
+        <img src={logo} alt="Logo Around The US" className="register__logo" />
+        <Link to="login" className="register__login-link">
+          Inicia sesión
         </Link>
       </div>
 
-      <hr className="signin__line" />
+      <hr className="register__line" />
 
-      <div className="signin">
-        <p className="signin__welcome">Iniciar sesión</p>
+      <div className="register">
+        <p className="register__welcome">Regístrate</p>
 
-        <form className="signin__form" onSubmit={handleSubmit}>
+        <form className="register__form" onSubmit={handleSubmit}>
           <input
             id="email"
             name="email"
             type="email"
             placeholder="Correo electrónico"
-            className="signin__input"
+            className="register__input"
             value={data.email}
             onChange={handleChange}
           />
@@ -53,21 +53,21 @@ const SignIn = ({ handleRegistration }) => {
             name="password"
             type="password"
             placeholder="Contraseña"
-            className="signin__input"
+            className="register__input"
             value={data.password}
             onChange={handleChange}
           />
-          <div className="signin__button-container">
-            <button type="submit" className="signin__link">
-              Iniciar sesión
+          <div className="register__button-container">
+            <button type="submit" className="register__link">
+              Regístrate
             </button>
           </div>
         </form>
 
-        <div className="signin__signin">
-          <p>¿Aún no eres miembro?</p>
-          <Link to="login" className="signin__login-link">
-            Regístrate Aquí
+        <div className="register__signin">
+          <p>¿Ya eres miembro?</p>
+          <Link to="login" className="register__login-link">
+            Inicia sesión aquí
           </Link>
         </div>
       </div>
@@ -75,4 +75,4 @@ const SignIn = ({ handleRegistration }) => {
   );
 };
 
-export default signin;
+export default Register;

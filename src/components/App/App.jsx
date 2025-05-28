@@ -4,6 +4,8 @@ import Footer from "../Footer/Footer";
 import { useState, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import api from "../../utils/api";
+import LogIn from "../Login/Login";
+import Register from "../Register/Register";
 import {
   Routes,
   Route,
@@ -11,8 +13,6 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
-
-import SignUp from "../SignUp/SignUp";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -119,7 +119,9 @@ function App() {
             </div>
           }
         />
-        <Route path="/signup" element={<SignUp />} />
+
+        <Route path="/signin" element={<LogIn />} />
+        <Route path="/signup" element={<Register />} />
       </Routes>
     </CurrentUserContext.Provider>
   );

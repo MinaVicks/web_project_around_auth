@@ -4,30 +4,30 @@
   justify-content: center;
   min-height: 100vh;
 }
-.signup__line {
+.register__line {
   size: 1;
   width: 100%;
   border-color: #545454;
 }
-.signup__logo {
+.register__logo {
   width: 180px;
   margin: 2% 0;
 }
 
-.signup__header {
+.register__header {
   margin: 2% 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.signup__login-link {
+.register__login-link {
   font-size: 1.2rem;
   color: white;
   text-decoration: none;
 }
 
-.signup {
+.register {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -37,15 +37,15 @@
   margin: auto;
 }
 
-.signup__welcome {
+.register__welcome {
   margin: 0;
 }
 
-.signup__error {
+.register__error {
   color: #02ff00;
 }
 
-.signup__form {
+.register__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,14 +54,14 @@
   margin-top: 12px;
 }
 
-.signup__input {
+.register__input {
   color: #545454;
   font: 1rem sans-serif;
   padding: 5% 0% 1% 0%;
   margin: 2% 0;
 }
 
-.signup__form input {
+.register__form input {
   color: white;
   background: none;
   border-bottom: 2px solid #eaeaea;
@@ -70,7 +70,7 @@
   border-left: none;
 }
 
-.signup__button-container {
+.register__button-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,95 +79,95 @@
   margin-top: 50%;
 }
 
-.signup__link {
+.register__link {
   text-align: center;
   border: none;
   font: 1.2rem sans-serif;
   background-color: white;
 }
 
-.signup__signin {
+.register__signin {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 32px;
 }
 
-.signup__signin p {
+.register__signin p {
   margin-right: 12px;
   font: 1rem sans-serif;
 }
 
-.signup__login-link {
+.register__login-link {
   color: white;
   text-decoration: none;
   font: 1rem sans-serif;
 }
 
 @media screen and (max-width: 720px) {
-  .signup {
+  .register {
     width: 80%;
     margin: 0 auto;
     padding-top: 1rem;
   }
 
-  .signup__line {
+  .register__line {
     width: 80%;
   }
-  .signup__logo {
+  .register__logo {
     width: 150px;
     margin: 2% 0;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .signup {
+  .register {
     width: 90%;
     margin: 0 auto;
     padding-top: 1rem;
   }
 
-  .signup__line {
+  .register__line {
     width: 100%;
   }
-  .signup__logo {
+  .register__logo {
     width: 120px;
     margin: 2% 0;
   }
-  .signup__login-link {
+  .register__login-link {
     font-size: 0.8rem;
   }
-  .signup__login-link {
+  .register__login-link {
     font-size: 0.8rem;
     color: white;
     text-decoration: none;
   }
 
-  .signup {
+  .register {
     width: 80%;
     margin: auto;
     margin-top: 2%;
     font: 1.2rem sans-serif;
   }
 
-  .signup__form {
+  .register__form {
     margin-top: 10%;
   }
 
-  .signup__link {
+  .register__link {
     font: 1rem sans-serif;
   }
 
-  .signup__button-container {
+  .register__button-container {
     padding: 5%;
   }
-  .signup__signin p {
+  .register__signin p {
     font-size: 0.8rem;
   }
-  .signup__signin {
+  .register__signin {
     margin-top: 2%;
   }
-  .signup__input {
+  .register__input {
     font-size: 0.8rem;
   }
 }

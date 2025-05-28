@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logo.svg";
 
-import "./SignUp.css";
+import "./Login.css";
 
-const SignUp = ({ handleRegistration }) => {
+const LogIn = ({ handleRegistration }) => {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -25,25 +25,25 @@ const SignUp = ({ handleRegistration }) => {
 
   return (
     <div className="page">
-      <div className="signup__header">
-        <img src={logo} alt="Logo Around The US" className="signup__logo" />
-        <Link to="login" className="signup__login-link">
-          Inicia sesión
+      <div className="login__header">
+        <img src={logo} alt="Logo Around The US" className="login__logo" />
+        <Link to="login" className="login__login-link">
+          Registrate
         </Link>
       </div>
 
-      <hr className="signup__line" />
+      <hr className="login__line" />
 
-      <div className="signup">
-        <p className="signup__welcome">Regístrate</p>
+      <div className="login">
+        <p className="login__welcome">Iniciar sesión</p>
 
-        <form className="signup__form" onSubmit={handleSubmit}>
+        <form className="login__form" onSubmit={handleSubmit}>
           <input
             id="email"
             name="email"
             type="email"
             placeholder="Correo electrónico"
-            className="signup__input"
+            className="login__input"
             value={data.email}
             onChange={handleChange}
           />
@@ -53,21 +53,21 @@ const SignUp = ({ handleRegistration }) => {
             name="password"
             type="password"
             placeholder="Contraseña"
-            className="signup__input"
+            className="login__input"
             value={data.password}
             onChange={handleChange}
           />
-          <div className="signup__button-container">
-            <button type="submit" className="signup__link">
-              Regístrate
+          <div className="login__button-container">
+            <button type="submit" className="login__link">
+              Iniciar sesión
             </button>
           </div>
         </form>
 
-        <div className="signup__signin">
-          <p>¿Ya eres miembro?</p>
-          <Link to="login" className="signup__login-link">
-            Inicia sesión aquí
+        <div className="login__login">
+          <p>¿Aún no eres miembro?</p>
+          <Link to="login" className="login__login-link">
+            Regístrate Aquí
           </Link>
         </div>
       </div>
@@ -75,4 +75,4 @@ const SignUp = ({ handleRegistration }) => {
   );
 };
 
-export default SignUp;
+export default LogIn;

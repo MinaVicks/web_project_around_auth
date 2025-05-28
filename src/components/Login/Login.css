@@ -4,30 +4,30 @@
   justify-content: center;
   min-height: 100vh;
 }
-.signin__line {
+.login__line {
   size: 1;
   width: 100%;
   border-color: #545454;
 }
-.signin__logo {
+.login__logo {
   width: 180px;
   margin: 2% 0;
 }
 
-.signin__header {
+.login__header {
   margin: 2% 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.signin__login-link {
+.login__login-link {
   font-size: 1.2rem;
   color: white;
   text-decoration: none;
 }
 
-.signin {
+.login {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -37,15 +37,15 @@
   margin: auto;
 }
 
-.signin__welcome {
+.login__welcome {
   margin: 0;
 }
 
-.signin__error {
+.login__error {
   color: #02ff00;
 }
 
-.signin__form {
+.login__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,14 +54,14 @@
   margin-top: 12px;
 }
 
-.signin__input {
+.login__input {
   color: #545454;
   font: 1rem sans-serif;
   padding: 5% 0% 1% 0%;
   margin: 2% 0;
 }
 
-.signin__form input {
+.login__form input {
   color: white;
   background: none;
   border-bottom: 2px solid #eaeaea;
@@ -70,7 +70,7 @@
   border-left: none;
 }
 
-.signin__button-container {
+.login__button-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,95 +79,95 @@
   margin-top: 50%;
 }
 
-.signin__link {
+.login__link {
   text-align: center;
   border: none;
   font: 1.2rem sans-serif;
   background-color: white;
 }
 
-.signin__signin {
+.login__login {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 32px;
 }
 
-.signin__signin p {
+.login__login p {
   margin-right: 12px;
   font: 1rem sans-serif;
 }
 
-.signin__login-link {
+.login__login-link {
   color: white;
   text-decoration: none;
   font: 1rem sans-serif;
 }
 
 @media screen and (max-width: 720px) {
-  .signin {
+  .login {
     width: 80%;
     margin: 0 auto;
     padding-top: 1rem;
   }
 
-  .signin__line {
+  .login__line {
     width: 80%;
   }
-  .signin__logo {
+  .login__logo {
     width: 150px;
     margin: 2% 0;
   }
 }
 
 @media screen and (max-width: 430px) {
-  .signin {
+  .login {
     width: 90%;
     margin: 0 auto;
     padding-top: 1rem;
   }
 
-  .signin__line {
+  .login__line {
     width: 100%;
   }
-  .signin__logo {
+  .login__logo {
     width: 120px;
     margin: 2% 0;
   }
-  .signin__login-link {
+  .login__login-link {
     font-size: 0.8rem;
   }
-  .signin__login-link {
+  .login__login-link {
     font-size: 0.8rem;
     color: white;
     text-decoration: none;
   }
 
-  .signin {
+  .login {
     width: 80%;
     margin: auto;
     margin-top: 2%;
     font: 1.2rem sans-serif;
   }
 
-  .signin__form {
+  .login__form {
     margin-top: 10%;
   }
 
-  .signin__link {
+  .login__link {
     font: 1rem sans-serif;
   }
 
-  .signin__button-container {
+  .login__button-container {
     padding: 5%;
   }
-  .signin__signin p {
+  .login__login p {
     font-size: 0.8rem;
   }
-  .signin__signin {
+  .login__login {
     margin-top: 2%;
   }
-  .signin__input {
+  .login__input {
     font-size: 0.8rem;
   }
 }
