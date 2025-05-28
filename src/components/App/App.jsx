@@ -12,7 +12,7 @@ import {
   useLocation,
 } from "react-router-dom";
 
-import SignUp from "../SignUp/SignUp.jsx";
+import SignUp from "../SignUp/SignUp";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
