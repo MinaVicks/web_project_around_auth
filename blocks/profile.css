@@ -8,6 +8,18 @@
   border-color: aliceblue;
 }
 
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile__login-link {
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
 .profile__container {
   position: relative;
   display: flex;

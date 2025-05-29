@@ -6,6 +6,7 @@ import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import api from "../../utils/api";
 import LogIn from "../Login/Login";
 import Register from "../Register/Register";
+import ProtectedRoute from "../ProtectedRoute";
 import {
   Routes,
   Route,
@@ -14,14 +15,38 @@ import {
   useLocation,
 } from "react-router-dom";
 
+import * as auth from "../../utils/auth.jsx";
+
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [cards, setCards] = useState([]);
-
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  const [userData, setUserData] = useState({ username: "", email: "" });
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+
+  const handleRegistration = ({ email, password }) => {
+    auth
+      .register(email, password)
+      .then((data) => {
+        console.log("Registration successful:", data);
+        setIsLoggedIn(true);
+        navigate("/signin");
+      })
+      .catch((err) => {
+        console.error("Registration error:", err);
+      });
+  };
+
+  useEffect(() => {
+    // Check auth status on initial load
+    setIsLoggedIn(auth.isAuthenticated());
+  }, []);
+
+  const handleLogout = () => {
+    auth.logout();
+    setIsLoggedIn(false);
+  };
 
   useEffect(() => {
     (async () => {
@@ -108,20 +133,32 @@ function App() {
         <Route
           path="/main"
           element={
-            <div className="page">
-              <Header />
-              <Main
-                cards={cards}
-                onCardLike={handleCardLike}
-                onCardDelete={handleCardDelete}
-              />
-              <Footer />
-            </div>
+            <ProtectedRoute isLoggedIn={isLoggedIn}>
+              <div className="page">
+                <Header />
+                <Main
+                  cards={cards}
+                  onCardLike={handleCardLike}
+                  onCardDelete={handleCardDelete}
+                />
+                <Footer />
+              </div>
+            </ProtectedRoute>
           }
         />
 
-        <Route path="/signin" element={<LogIn />} />
-        <Route path="/signup" element={<Register />} />
+        <Route
+          path="/signin"
+          element={<LogIn setIsLoggedIn={setIsLoggedIn} />}
+        />
+        <Route
+          path="/signup"
+          element={<Register handleRegistration={handleRegistration} />}
+        />
+        <Route
+          path="*"
+          element={<Navigate to={isLoggedIn ? "/main" : "/signin"} />}
+        />
       </Routes>
     </CurrentUserContext.Provider>
   );

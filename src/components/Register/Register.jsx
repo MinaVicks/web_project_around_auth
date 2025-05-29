@@ -27,7 +27,7 @@ const Register = ({ handleRegistration }) => {
     <div className="page">
       <div className="register__header">
         <img src={logo} alt="Logo Around The US" className="register__logo" />
-        <Link to="login" className="register__login-link">
+        <Link to="/signin" className="register__login-link">
           Inicia sesión
         </Link>
       </div>
@@ -66,7 +66,7 @@ const Register = ({ handleRegistration }) => {
 
         <div className="register__signin">
           <p>¿Ya eres miembro?</p>
-          <Link to="login" className="register__login-link">
+          <Link to="/signin" className="register__login-link">
             Inicia sesión aquí
           </Link>
         </div>

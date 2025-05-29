@@ -9,6 +9,7 @@ import EditAvatar from "../Main/components/EditAvatar/EditAvatar";
 import EditProfile from "../Main/components/EditProfile/EditProfile";
 import { useState, useContext, useEffect } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import { Link } from "react-router-dom";
 
 function Header() {
   const {
@@ -48,8 +49,13 @@ function Header() {
 
   return (
     <header className="header">
-      <div className="header__logo">
-        <img src={logo} alt="Logo Around The US" className="header__logo" />
+      <div className="header__container">
+        <div className="header__logo">
+          <img src={logo} alt="Logo Around The US" className="header__logo" />
+        </div>
+        <Link to="/signup" className="profile__login-link">
+          Cerrar sesión
+        </Link>
       </div>
       <hr className="header__line" />
 
