@@ -1,10 +1,15 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logo.svg";
+import SuccessPopup from "../SuccessPopup/successPopup";
+import FailPopup from "../FailPopup/FailPopup";
 
 import "./register.css";
 
 const Register = ({ handleRegistration }) => {
+  const [showSuccessPopup, setShowSuccessPopup] = useState(null);
+  const [showFailPopup, setShowFailPopup] = useState(null);
+  const navigate = useNavigate();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -18,13 +23,34 @@ const Register = ({ handleRegistration }) => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    handleRegistration(data);
+
+    try {
+      await handleRegistration(data);
+      setShowSuccessPopup(true);
+    } catch (err) {
+      console.log(err.message || "Registration failed. at register.jsx");
+      setShowFailPopup(true);
+      setShowSuccessPopup(false);
+    }
+  };
+
+  const handlePopupCloseSuccess = () => {
+    setShowSuccessPopup(false);
+    navigate("/main");
+  };
+  const handlePopupClose = () => {
+    setShowFailPopup(false);
   };
 
   return (
     <div className="page">
+      <SuccessPopup
+        isOpen={showSuccessPopup}
+        onClose={handlePopupCloseSuccess}
+      ></SuccessPopup>
+      <FailPopup isOpen={showFailPopup} onClose={handlePopupClose}></FailPopup>
       <div className="register__header">
         <img src={logo} alt="Logo Around The US" className="register__logo" />
         <Link to="/signin" className="register__login-link">

@@ -25,21 +25,23 @@ function App() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const handleRegistration = ({ email, password }) => {
-    auth
+  const handleRegistration = async ({ email, password }) => {
+    return auth
       .register(email, password)
       .then((data) => {
         console.log("Registration successful:", data);
+
         setIsLoggedIn(true);
-        navigate("/signin");
+
+        return data;
       })
       .catch((err) => {
-        console.error("Registration error:", err);
+        console.error("Registration error: at app.jsx", err);
+        throw err;
       });
   };
 
   useEffect(() => {
-    // Check auth status on initial load
     setIsLoggedIn(auth.isAuthenticated());
   }, []);
 
@@ -60,7 +62,7 @@ function App() {
     api
       .getInitialCards()
       .then((data) => {
-        setCards(data); // Actualizamos el estado con las tarjetas recibidas
+        setCards(data);
       })
       .catch((err) => {
         console.error("Error al cargar las tarjetas:", err);
@@ -93,7 +95,6 @@ function App() {
   }
 
   async function handleCardDelete(card) {
-    console.log("click delete");
     try {
       await api.deleteCard(card._id);
       setCards((state) => state.filter((c) => c._id !== card._id));

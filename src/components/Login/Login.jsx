@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logo.svg";
 import * as auth from "../../utils/auth.jsx";
+import FailPopup from "../FailPopup/FailPopup.jsx";
 
 import "./Login.css";
 
@@ -10,6 +11,7 @@ const LogIn = ({ setIsLoggedIn }) => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const [failPopup, setfailPopup] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,12 +25,18 @@ const LogIn = ({ setIsLoggedIn }) => {
       setIsLoggedIn(true);
       navigate("/main");
     } catch (err) {
-      setError(err.message);
+      setfailPopup(true);
     }
+  };
+
+  const handlePopupClose = () => {
+    setfailPopup(false);
+    console.log("pop close");
   };
 
   return (
     <div className="page">
+      <FailPopup isOpen={failPopup} onClose={handlePopupClose}></FailPopup>
       <div className="login__header">
         <img src={logo} alt="Logo Around The US" className="login__logo" />
         <Link to="/signup" className="login__login-link">

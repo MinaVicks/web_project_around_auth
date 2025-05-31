@@ -66,6 +66,14 @@
   padding: 2% 0px;
 }
 
+.popup__infoTool {
+  width: 30%;
+  align-content: center;
+  justify-self: center;
+  margin: 0 auto;
+  padding: 5%;
+}
+
 .popup__submit-btn {
   margin: 10% 10%;
   width: 80%;
