@@ -30,9 +30,8 @@ function App() {
       .register(email, password)
       .then((data) => {
         console.log("Registration successful:", data);
-
+        setUserData({ email });
         setIsLoggedIn(true);
-
         return data;
       })
       .catch((err) => {
@@ -47,7 +46,9 @@ function App() {
 
   const handleLogout = () => {
     auth.logout();
+    localStorage.removeItem("registeredEmail");
     setIsLoggedIn(false);
+    navigate("/signin");
   };
 
   useEffect(() => {
@@ -136,7 +137,7 @@ function App() {
           element={
             <ProtectedRoute isLoggedIn={isLoggedIn}>
               <div className="page">
-                <Header />
+                <Header onLogout={handleLogout} />
                 <Main
                   cards={cards}
                   onCardLike={handleCardLike}

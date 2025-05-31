@@ -17,7 +17,17 @@
 .profile__login-link {
   font-size: 1.2rem;
   color: white;
-  text-decoration: none;
+  border: none;
+  background: none;
+}
+
+.profile__user-mail {
+  color: aliceblue;
+}
+
+.pofile__user-section {
+  display: flex;
+  justify-content: space-between;
 }
 
 .profile__container {

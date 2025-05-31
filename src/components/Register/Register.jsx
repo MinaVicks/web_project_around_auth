@@ -28,6 +28,8 @@ const Register = ({ handleRegistration }) => {
 
     try {
       await handleRegistration(data);
+      localStorage.setItem("registeredEmail", data.email);
+      console.log("Email guardado:", data.email);
       setShowSuccessPopup(true);
     } catch (err) {
       console.log(err.message || "Registration failed. at register.jsx");
