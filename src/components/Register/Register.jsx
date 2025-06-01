@@ -1,10 +1,8 @@
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logo.svg";
-import SuccessPopup from "../SuccessPopup/successPopup";
-import FailPopup from "../FailPopup/FailPopup";
-
-import "./register.css";
+import SuccessPopup from "../InfoToolTip/successPopup/successPopup";
+import FailPopup from "../InfoToolTip/FailPopup/FailPopup";
 
 const Register = ({ handleRegistration }) => {
   const [showSuccessPopup, setShowSuccessPopup] = useState(null);

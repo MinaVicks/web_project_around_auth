@@ -1,7 +1,7 @@
-import btnClose from "../../assets/images/Close_off.svg";
-import fail from "../../assets/images/failed.svg";
+import btnClose from "../../../assets/images/Close_off.svg";
+import fail from "../../../assets/images/failed.svg";
 
-function FailPopup({ isOpen, onClose, title, message }) {
+function FailPopup({ isOpen, onClose }) {
   if (!isOpen) return null;
   return (
     <div className="popup">

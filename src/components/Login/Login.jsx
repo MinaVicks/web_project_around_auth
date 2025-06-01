@@ -2,9 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import logo from "../../assets/images/logo.svg";
 import * as auth from "../../utils/auth.jsx";
-import FailPopup from "../FailPopup/FailPopup.jsx";
-
-import "./Login.css";
+import FailPopup from "../InfoToolTip/FailPopup/FailPopup.jsx";
 
 const LogIn = ({ setIsLoggedIn }) => {
   const [email, setEmail] = useState("");

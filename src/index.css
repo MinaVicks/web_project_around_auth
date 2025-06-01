@@ -6,6 +6,6 @@
 @import url(../blocks/elements.css);
 @import url(../blocks/footer.css);
 @import url(../blocks/popup.css);
+@import url(../blocks/Register.css);
+@import url(../blocks/Login.css);
 @import url(./components/App/App.css);
-@import url(./components/Footer/Footer.css);
-@import url(./components/Main/Main.css);

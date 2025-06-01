@@ -4,10 +4,7 @@ import { CurrentUserContext } from "../../../../contexts/CurrentUserContext";
 
 export default function Card({ card, onImageClick, onCardLike, onCardDelete }) {
   const { name, link, isLiked } = card;
-  //const userContext = useContext(CurrentUserContext); // Obtiene el objeto currentUser
   const { currentUser } = useContext(CurrentUserContext);
-
-  // Función para manejar clic en el like
 
   return (
     <div className="elements__item">
