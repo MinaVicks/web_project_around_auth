@@ -18,7 +18,7 @@ const LogIn = ({ setIsLoggedIn }) => {
 
     try {
       const data = await auth.login(email, password);
-
+      localStorage.setItem("loginEmail", email);
       localStorage.setItem("token", data.token);
       localStorage.setItem("user", JSON.stringify(data.user));
 

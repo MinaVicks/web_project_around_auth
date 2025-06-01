@@ -20,6 +20,7 @@ function Header({ onLogout }) {
   } = useContext(CurrentUserContext);
 
   const registeredEmail = localStorage.getItem("registeredEmail");
+  const loginEmail = localStorage.getItem("loginEmail");
 
   const [popup, setPopup] = useState(null);
 
@@ -57,7 +58,10 @@ function Header({ onLogout }) {
         </div>
 
         <div className="profile__user-section">
-          <p className="profile__user-mail">{registeredEmail}</p>
+          <div className="profile__user-mail">
+            <p>{registeredEmail}</p>
+            <p>{loginEmail}</p>
+          </div>
           <button className="profile__login-link" onClick={onLogout}>
             Cerrar sesión
           </button>

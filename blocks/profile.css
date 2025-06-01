@@ -15,19 +15,23 @@
 }
 
 .profile__login-link {
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   color: white;
   border: none;
   background: none;
 }
 
 .profile__user-mail {
-  color: aliceblue;
+  color: white;
+  font-size: 0.8rem;
+  margin-right: 5px;
 }
 
-.pofile__user-section {
+.profile__user-section {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 .profile__container {

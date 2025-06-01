@@ -47,6 +47,7 @@ function App() {
   const handleLogout = () => {
     auth.logout();
     localStorage.removeItem("registeredEmail");
+    localStorage.removeItem("loginEmail");
     setIsLoggedIn(false);
     navigate("/signin");
   };
